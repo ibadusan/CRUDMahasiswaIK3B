@@ -13,9 +13,12 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import afifibad.hobike.R;
 import afifibad.hobike.model.Mahasiswa;
+import afifibad.hobike.model.MahasiswaResult;
+import retrofit2.Call;
 
 /**
  * Created by user on 23/05/2018.
@@ -50,7 +53,7 @@ public class MahasiswaAdapter extends ArrayAdapter<Mahasiswa> {
 
         ImageView ivImage = (ImageView) convertView.findViewById(R.id.iv_foto);
         Picasso.get()
-                .load("https://cms-assets.tutsplus.com/uploads/users/21/posts/19431/featured_image/CodeFeature.jpg")
+                .load("http://192.168.43.133:8000/LaraBlog/" + mahasiswa.getFoto())
                 .resize(100,100)
                 .into(ivImage);
 
